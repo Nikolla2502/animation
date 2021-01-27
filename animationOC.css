@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/*################################################*\
+################    Couleurs            ############
+\*################################################*/
+/*################################################*\
+################   Mise en page         ############
+\*################################################*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f0d3d3;
+  color: white;
+}
+
+.title {
+  background: #b370f7;
+  text-align: center;
+  margin: auto;
+  height: 50px;
+  padding-top: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 3px solid rebeccapurple;
+}
+
+.section {
+  background-color: #b3d7f5;
+  height: 300px;
+  width: 500px;
+  border: 2px solid #ec7c7c;
+  margin: 20px auto;
+}
+
+.section_1 {
+  height: 250px;
+}
+
+.section_2 {
+  background-color: #fad390;
+  height: 300px;
+}
+
+.section_3 {
+  background-color: #f8c291;
+}
+
+.section_4 {
+  background-color: #93dff7;
+}
+
+.section_5 {
+  background-color: #f7a194;
+}
+
+.number {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  background-color: white;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+/*################################################*\
+################   Animations           ############
+\*################################################*/
+/*################################################*\
+################ Bouton qui grandit  1  ############
+\*################################################*/
+.btn {
+  background: #011c37;
+  color: #15DEA5;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 300px;
+  margin: 50px auto;
+  padding: 1.85rem 3rem;
+  border-radius: 10rem;
+  border: 2px solid #15DEA5;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  /* durée de la transition */
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  /*changement d'état au hover   */
+}
+
+/*################################################*\
+################ Formulaire  2          ############
+\*################################################*/
+.form {
+  width: 300px;
+  margin: auto;
+}
+
+.form__group input {
+  /*saisie de l'adresse email   */
+  border: 2px solid #6300a0;
+  border-radius: 100rem;
+  color: #6300a0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  outline: none;
+  padding: .5rem 1.5rem;
+  width: 100%;
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
+}
+
+.form__group input:focus {
+  border: 2px solid #6300a0;
+}
+
+.form__group input:not(:focus):invalid {
+  /* adresse email invalide (:not(:focus) permet de terminer la saisie)   */
+  background: #b20a37;
+  border: 2px solid #b20a37;
+  color: #fff;
+}
+
+label {
+  font-size: 1.5rem;
+  color: #6300a0;
+}
+
+/*################################################*\
+########### bouton + ballon adjacence 3 ############
+\*################################################*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.btnball {
+  background: #15DEA5;
+  height: 20px;
+  width: 150px;
+  font-size: 2rem;
+  margin: 50px auto;
+  cursor: pointer;
+  padding: 1.85rem 3rem;
+  border: 2px solid #6300a0;
+  border-radius: 10rem;
+}
+
+.btnball:active + .ball {
+  /* on peut mettre l'effet au survol (hover) ou au click (active)*/
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: red;
+  border: 3px solid #6300a0;
+  margin-bottom: 1rem;
+  border-radius: 50px;
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+  /* le ballon sera plus petit au depart */
+  -webkit-transition: -webkit-transform 4000ms;
+  transition: -webkit-transform 4000ms;
+  transition: transform 4000ms;
+  transition: transform 4000ms, -webkit-transform 4000ms;
+  /* la transformation sera plus lente */
+}
+
+/*################################################*\
+################ Bouton qui grandit  4  ############
+##############    transition combiné  ##############
+\*################################################*/
+/*valeur couleur de depart*/
+/*valeur couleur de fin*/
+.btn4 {
+  background: rgba(1, 28, 55, 0);
+  /*valeur couleur de depart*/
+  color: #011c37;
+  font-size: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  width: 300px;
+  margin: 50px auto;
+  padding: 1.85rem 3rem;
+  border-radius: 10rem;
+  border: 4px solid #15DEA5;
+  -webkit-transition: background-color 2s 150ms,color 1500ms, -webkit-transform 850ms;
+  transition: background-color 2s 150ms,color 1500ms, -webkit-transform 850ms;
+  transition: transform 850ms, background-color 2s 150ms,color 1500ms;
+  transition: transform 850ms, background-color 2s 150ms,color 1500ms, -webkit-transform 850ms;
+  /*transition avec duree differente*/
+}
+
+.btn4:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  /*changement d'état au hover   */
+  background-color: #011c37;
+  /*valeur couleur  de fin*/
+  color: #15DEA5;
+}
+
+/*################################################*\
+########### bouton + box fps optimisation  5    ####
+\*################################################*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.btnbox {
+  background: #15DEA5;
+  height: 20px;
+  width: 200px;
+  font-size: 1.6rem;
+  margin: 40px auto;
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  border: 2px solid #6300a0;
+  border-radius: 10rem;
+}
+
+.btnbox:active + .box {
+  -webkit-transform: scaleX(2);
+          transform: scaleX(2);
+  /* scale sur 1 seul axe */
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: red;
+  border: 3px solid #6300a0;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+  /* modifier egalement scaleX ou scaleY */
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+
+/*################################################*\
+########### bouton + box translate         5    ####
+\*################################################*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.btnbox_translate {
+  background: #15DEA5;
+  height: 20px;
+  width: 200px;
+  font-size: 1.6rem;
+  margin: 40px auto;
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  border: 2px solid #6300a0;
+  border-radius: 10rem;
+}
+
+.btnbox_translate:active + .box_translate {
+  -webkit-transform: translate(100px, 0);
+          transform: translate(100px, 0);
+}
+
+.btnbox_translate span {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.box_translate {
+  width: 100px;
+  height: 100px;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 20px auto;
+  background: red;
+  border: 3px solid #6300a0;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+}
+/*# sourceMappingURL=animationOC.css.map */
